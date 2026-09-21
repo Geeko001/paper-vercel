@@ -1,0 +1,259 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f7f6f2;
+  --surface: #fbfaf7;
+  --surface-muted: #f0eee8;
+  --foreground: #111315;
+  --foreground-muted: #62645f;
+  --border: #d9d7d0;
+  --border-strong: #bebbb2;
+  --inverse: #111315;
+  --inverse-foreground: #f7f6f2;
+  --accent: #1e2428;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --font-display: var(--font-instrument-serif), Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-inverse: var(--inverse);
+  --color-inverse-foreground: var(--inverse-foreground);
+  --color-accent: var(--accent);
+
+  --font-display: var(--font-display);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--inverse);
+  color: var(--inverse-foreground);
+}
+
+/* Fluid editorial type */
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  font-weight: 400;
+}
+
+.display-hero {
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.h1-editorial {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+}
+
+.h2-editorial {
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.meta-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--foreground-muted);
+}
+
+/* Fine rules */
+.rule {
+  border-color: var(--border);
+}
+
+/* Focus */
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Card hover */
+.paper-card {
+  transition:
+    transform 200ms ease-out,
+    border-color 200ms ease-out,
+    background-color 200ms ease-out;
+}
+.paper-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+.paper-card:hover .card-arrow {
+  transform: translateX(4px);
+}
+.card-arrow {
+  transition: transform 200ms ease-out;
+}
+
+/* Research field lines */
+.research-field path,
+.research-field line {
+  vector-effect: non-scaling-stroke;
+}
+
+/* ── Motion: restrained, editorial ── */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(-1.5%, 0, 0) scale(1.04);
+  }
+  to {
+    transform: translate3d(1.5%, 0, 0) scale(1.04);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-5px) rotate(-1deg);
+  }
+  40% {
+    transform: translateX(5px) rotate(1deg);
+  }
+  60% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(3px);
+  }
+}
+
+.anim-rise {
+  animation: rise 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.anim-fade {
+  animation: fade 0.5s ease-out both;
+}
+
+.anim-pop {
+  animation: pop 0.22s ease-out both;
+}
+
+.anim-shake {
+  animation: shake 0.4s ease-out;
+}
+
+.hero-drift {
+  animation: drift 26s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+.shimmer {
+  background: linear-gradient(
+    100deg,
+    var(--surface-muted) 40%,
+    var(--surface) 50%,
+    var(--surface-muted) 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s linear infinite;
+}
+
+/* Scroll reveal — .is-visible is added by <Reveal> on entry */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+  .hero-drift {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
