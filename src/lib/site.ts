@@ -6,10 +6,10 @@ export const SITE_URL =
 
 export const SITE = {
   name: "GEEK",
-  researcher: "Aashirwad Sharma",
-  role: "Independent Researcher",
+  author: "Aashirwad Sharma",
+  role: "Tinkerer & Writer",
   description:
-    "Exploring the intersection of AI, Computer Science, Finance and Quantitative Research.",
+    "AI, Computer Science, Finance and numbers — written down simply as I tinker and learn.",
 } as const;
 
 export type SocialKey = "github" | "linkedin" | "x" | "email";

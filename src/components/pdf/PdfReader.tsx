@@ -458,7 +458,7 @@ export function PdfReader({
                 rel="noopener noreferrer"
                 className="rounded-[7px] bg-inverse px-4 py-2 text-[13.5px] font-medium text-inverse-foreground"
               >
-                Read Paper
+                Read
               </a>
               <DownloadButton url={url} filename={fileName} variant="secondary" />
               <button

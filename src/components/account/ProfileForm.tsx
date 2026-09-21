@@ -186,7 +186,7 @@ export function ProfileForm({ userId }: { userId: string }) {
           maxLength={280}
           value={form.bio}
           onChange={(e) => set("bio", e.target.value)}
-          placeholder="A line or two about your research interests…"
+          placeholder="A line or two about what you like…"
           className={`${input} resize-none`}
         />
       </label>

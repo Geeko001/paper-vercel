@@ -23,7 +23,7 @@ export default function Home() {
       <section className="border-b rule">
         <div className="mx-auto grid max-w-[1280px] grid-cols-1 lg:grid-cols-[1.05fr_1fr]">
           <div className="px-4 pb-10 pt-10 sm:px-6 lg:pb-16 lg:pt-16">
-            <p className="meta-label anim-rise">Independent Research by Aashirwad Sharma</p>
+            <p className="meta-label anim-rise">Aashirwad Sharma — I tinker and write</p>
             <h1
               className="font-display display-hero anim-rise mt-3"
               style={{ animationDelay: "70ms" }}
@@ -42,11 +42,11 @@ export default function Home() {
               className="anim-rise mt-4 max-w-[440px] text-[14px] leading-relaxed text-foreground-muted"
               style={{ animationDelay: "200ms" }}
             >
-              A personal research platform where I publish my academic and
-              research work for anyone to read, learn and build upon.
+              A small notebook where I write down what I&apos;m tinkering with
+              and learning — for anyone curious to read.
             </p>
             <div className="anim-rise mt-6" style={{ animationDelay: "260ms" }}>
-              <Button href="/research">Explore Research</Button>
+              <Button href="/research">Read my writing</Button>
             </div>
 
             {/* Mobile visual */}
@@ -66,7 +66,7 @@ export default function Home() {
       {/* RESEARCH AREAS */}
       <section className="border-b rule bg-surface">
         <Reveal className="mx-auto max-w-[1280px] px-4 py-10 sm:px-6">
-          <p className="meta-label">Research Areas</p>
+          <p className="meta-label">Topics</p>
           <div className="mt-6 grid grid-cols-1 gap-px overflow-hidden rounded-[10px] border rule bg-border sm:grid-cols-2 lg:grid-cols-4">
             {RESEARCH_AREAS.map((area) => {
               const Icon = AREA_ICONS[area.id as keyof typeof AREA_ICONS];
@@ -95,7 +95,7 @@ export default function Home() {
         <Reveal className="mx-auto max-w-[1280px] px-4 py-12 sm:px-6">
           <div className="flex items-end justify-between">
             <h2 className="font-display text-[28px] tracking-tight">
-              Latest Research
+              Latest writing
             </h2>
             {featured.length > 0 && <ViewAll href="/research" />}
           </div>
@@ -109,10 +109,10 @@ export default function Home() {
             </div>
           ) : (
             <div className="mt-6 rounded-[10px] border rule bg-surface p-8 text-center">
-              <p className="text-[15px] font-medium">First paper coming soon</p>
+              <p className="text-[15px] font-medium">First piece coming soon</p>
               <p className="mx-auto mt-1 max-w-[440px] text-[13.5px] text-foreground-muted">
-                Research is being prepared for publication. Check back shortly —
-                new papers will appear here and in the archive.
+                I&apos;m writing the first piece now. Check back shortly —
+                new writing will appear here and in the archive.
               </p>
             </div>
           )}
@@ -128,11 +128,11 @@ export default function Home() {
             </div>
             <div className="relative">
               <p className="mx-auto max-w-[420px] font-display text-[26px] leading-[1.35] tracking-tight sm:text-[30px]">
-                Better questions.
+                Ask questions.
                 <br />
-                Deeper research.
+                Tinker around.
                 <br />
-                Greater understanding.
+                Write it down.
               </p>
               <p className="meta-label mt-8">— GEEK</p>
             </div>

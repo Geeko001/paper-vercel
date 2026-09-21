@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const paper = getPaperBySlug(slug);
-  if (!paper) return { title: "Paper not found" };
+  if (!paper) return { title: "Piece not found" };
   return {
     title: paper.title,
     description: paper.abstract,
@@ -58,7 +58,7 @@ export default async function PaperPage({
         href="/research"
         className="text-[13px] text-foreground-muted hover:text-foreground"
       >
-        ← Back to Research
+        ← Back to writing
       </Link>
 
       <p className="meta-label mt-6">{areaLabel(paper.area)}</p>
@@ -82,7 +82,7 @@ export default async function PaperPage({
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 rounded-[7px] bg-inverse px-3.5 py-2 text-[13px] font-medium text-inverse-foreground transition-opacity hover:opacity-90"
               >
-                <BookOpen size={14} aria-hidden="true" /> Read Paper
+                <BookOpen size={14} aria-hidden="true" /> Read
               </a>
               <DownloadButton
                 url={paper.pdfPath}
@@ -101,7 +101,7 @@ export default async function PaperPage({
           )}
           <Link
             href="/sign-in"
-            title="Sign in to save papers"
+            title="Sign in to save pieces"
             className="inline-flex items-center gap-1.5 rounded-[7px] border rule bg-surface px-3.5 py-2 text-[13px] hover:border-border-strong"
           >
             <Bookmark size={14} aria-hidden="true" /> Save
@@ -122,7 +122,7 @@ export default async function PaperPage({
           <span className="flex h-6 w-6 items-center justify-center rounded-full bg-surface-muted text-[10px] font-semibold">
             AS
           </span>
-          Aashirwad Sharma · Independent Researcher
+          Aashirwad Sharma · Tinkerer & writer
         </span>
       </div>
 
@@ -141,7 +141,7 @@ export default async function PaperPage({
 
       <div className="mt-8 grid grid-cols-1 gap-8 lg:grid-cols-[1fr_420px]">
         <div>
-          <h2 className="text-[16px] font-semibold tracking-tight">Abstract</h2>
+          <h2 className="text-[16px] font-semibold tracking-tight">In short</h2>
           <p className="mt-3 text-[14.5px] leading-relaxed text-foreground/90">
             {paper.abstract}
           </p>
@@ -172,7 +172,7 @@ export default async function PaperPage({
 
           {related.length > 0 && (
             <div className="mt-10">
-              <h3 className="text-[13px] font-semibold">Related Research</h3>
+              <h3 className="text-[13px] font-semibold">More to read</h3>
               <div className="mt-3 grid gap-3 sm:grid-cols-2">
                 {related.map((r) => (
                   <PaperCard key={r.id} paper={r} />
@@ -210,7 +210,7 @@ export default async function PaperPage({
                   rel="noopener noreferrer"
                   className="inline-flex w-full items-center justify-center gap-1.5 rounded-[7px] bg-inverse px-3.5 py-2.5 text-[13.5px] font-medium text-inverse-foreground transition-opacity hover:opacity-90"
                 >
-                  <BookOpen size={14} aria-hidden="true" /> Read Paper
+                <BookOpen size={14} aria-hidden="true" /> Read
                 </a>
                 <DownloadButton
                   url={paper.pdfPath}
@@ -248,15 +248,15 @@ export default async function PaperPage({
             </div>
           )}
           <p className="mt-3 text-[12px] leading-relaxed text-foreground-muted">
-            Read Paper opens the manuscript in your browser&apos;s PDF viewer
-            (page navigation, zoom, find-in-page included). The original PDF
-            on GitHub is the canonical artifact.
+            Read opens the PDF in your browser&apos;s viewer
+            (page navigation, zoom, find-in-page included). The original file
+            on GitHub is the main copy.
           </p>
         </div>
       </div>
 
       {pdfAvailable && (
-        <section aria-label="In-page paper reader" className="mt-12">
+        <section aria-label="In-page reader" className="mt-12">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="font-display text-[24px] tracking-tight">
               Read on this page
@@ -284,9 +284,9 @@ export default async function PaperPage({
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "ScholarlyArticle",
+            "@type": "Article",
             headline: paper.title,
-            abstract: paper.abstract,
+            description: paper.abstract,
             author: { "@type": "Person", name: "Aashirwad Sharma" },
             datePublished: paper.publishedAt,
           }),

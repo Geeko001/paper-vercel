@@ -3,7 +3,7 @@ import { AuthJoke } from "@/components/account/AuthJoke";
 
 export const metadata = {
   title: "Sign In",
-  description: "Sign in to save research and keep track of your reading.",
+  description: "Sign in to save pieces and keep track of your reading.",
 };
 
 export default function SignInPage() {
@@ -13,7 +13,7 @@ export default function SignInPage() {
         <p className="font-display text-lg">GEEK</p>
         <h1 className="mt-3 text-[20px] font-semibold tracking-tight">Welcome back</h1>
         <p className="mt-1 text-[13.5px] text-foreground-muted">
-          Sign in to save research and track your reading.
+          Sign in to save pieces and track your reading.
         </p>
         <AuthJoke />
         <p className="mt-1 text-[12px] italic text-foreground-muted">

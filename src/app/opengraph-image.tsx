@@ -29,8 +29,8 @@ export default function OgImage() {
           GEEK
         </div>
         <div style={{ fontSize: 34, marginTop: 24, color: "#62645F" }}>
-          Independent Research by Aashirwad Sharma — AI, Computer Science,
-          Finance and Quantitative Research.
+          Aashirwad Sharma — I tinker and write about AI, Computer Science,
+          Finance and numbers.
         </div>
       </div>
     ),

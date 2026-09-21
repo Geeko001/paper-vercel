@@ -16,7 +16,7 @@ export default async function HistoryPage() {
         <AccountNav />
       </div>
       <p className="mt-6 text-[14px] text-foreground-muted">
-        No history yet. Papers you open will appear here with progress.
+        No history yet. Pieces you open will appear here with progress.
       </p>
     </div>
   );

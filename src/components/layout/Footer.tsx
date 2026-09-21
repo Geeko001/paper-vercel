@@ -50,13 +50,13 @@ export function Footer() {
           <div>
             <p className="font-display text-lg tracking-tight">GEEK</p>
             <p className="mt-1 text-[13px] text-foreground-muted">
-              Independent Research by Aashirwad Sharma
+              Aashirwad Sharma — I tinker and write
             </p>
           </div>
           <nav aria-label="Footer" className="flex gap-10 text-[13px]">
             <div className="flex flex-col gap-2.5">
               <Link href="/research" className="text-foreground-muted hover:text-foreground">
-                Research
+                Writing
               </Link>
               <Link href="/about" className="text-foreground-muted hover:text-foreground">
                 About

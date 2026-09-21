@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils/cn";
 
 const NAV = [
   { href: "/", label: "Home" },
-  { href: "/research", label: "Research" },
+  { href: "/research", label: "Writing" },
   { href: "/about", label: "About" },
 ];
 
@@ -58,7 +58,7 @@ export function Header({ user }: { user: HeaderUser | null }) {
         <div className="flex items-center gap-2.5">
           <Link
             href="/research"
-            aria-label="Search research"
+            aria-label="Search writing"
             className="flex h-8 w-8 items-center justify-center rounded-md border rule bg-surface text-foreground-muted hover:text-foreground"
           >
             <Search size={15} strokeWidth={1.75} />

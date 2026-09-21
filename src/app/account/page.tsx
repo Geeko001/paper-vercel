@@ -24,7 +24,7 @@ export default async function AccountPage() {
             {greeting(new Date().getHours())}
           </h1>
           <p className="mt-1 text-[14px] text-foreground-muted">
-            {user.email} · Your research activity.
+            {user.email} · Your saved pieces and reading.
           </p>
         </div>
         <SignOutButton />
@@ -33,7 +33,7 @@ export default async function AccountPage() {
         <AccountNav />
       </div>
       <div className="mt-6 grid gap-3 sm:grid-cols-3">
-        {["Saved Papers|/account/saved", "Reading History|/account/history", "Profile|/account/settings"].map(
+        {["Saved Pieces|/account/saved", "Reading History|/account/history", "Profile|/account/settings"].map(
           (s) => {
             const [label, href] = s.split("|");
             return (
@@ -49,7 +49,7 @@ export default async function AccountPage() {
         )}
       </div>
       <p className="mt-6 text-[13px] text-foreground-muted">
-        Signed in with Supabase Auth. Saved papers and reading history land
+        Signed in with Supabase Auth. Saved pieces and reading history land
         here once the database migration is run.
       </p>
     </div>

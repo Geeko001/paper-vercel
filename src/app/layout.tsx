@@ -28,23 +28,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "GEEK — Independent Research by Aashirwad Sharma",
+    default: "GEEK — Aashirwad Sharma tinkers and writes",
     template: "%s — GEEK",
   },
   description:
-    "Exploring the intersection of AI, Computer Science, Finance and Quantitative Research. Personal research platform by Aashirwad Sharma.",
+    "AI, Computer Science, Finance and numbers — written down simply as I tinker and learn. Personal notebook by Aashirwad Sharma.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
-    title: "GEEK — Independent Research by Aashirwad Sharma",
+    title: "GEEK — Aashirwad Sharma tinkers and writes",
     description:
-      "Exploring the intersection of AI, Computer Science, Finance and Quantitative Research.",
+      "AI, Computer Science, Finance and numbers — written down simply as I tinker and learn.",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "GEEK — Independent Research by Aashirwad Sharma",
+    title: "GEEK — Aashirwad Sharma tinkers and writes",
     description:
-      "Exploring the intersection of AI, Computer Science, Finance and Quantitative Research.",
+      "AI, Computer Science, Finance and numbers — written down simply as I tinker and learn.",
   },
 };
 

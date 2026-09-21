@@ -53,7 +53,7 @@ export const RESEARCH_AREAS: {
   },
   {
     id: "quant",
-    label: "Quantitative Research",
+    label: "Quant & Data",
     short: "Quant",
     description: "Mathematics, statistics, modeling and data analysis.",
   },

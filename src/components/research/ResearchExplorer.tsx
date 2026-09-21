@@ -54,8 +54,8 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
 
   return (
     <div className="mt-8 grid grid-cols-1 gap-10 lg:grid-cols-[220px_1fr]">
-      <aside aria-label="Research filters">
-        <p className="text-[13px] font-semibold">Research Areas</p>
+      <aside aria-label="Writing filters">
+        <p className="text-[13px] font-semibold">Topics</p>
         <ul className="mt-3 space-y-1">
           <li>
             <button
@@ -120,7 +120,7 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
       <div>
         <div className="flex flex-col gap-3 sm:flex-row">
           <label className="relative flex-1">
-            <span className="sr-only">Search papers</span>
+            <span className="sr-only">Search pieces</span>
             <Search
               size={15}
               aria-hidden="true"
@@ -130,12 +130,12 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search papers, topics, or keywords…"
+              placeholder="Search writing, topics, or keywords…"
               className="w-full rounded-[8px] border rule bg-surface py-2.5 pl-10 pr-3.5 text-[13.5px] outline-none placeholder:text-foreground-muted/70 focus:border-border-strong"
             />
           </label>
           <label className="text-[13px]">
-            <span className="sr-only">Sort papers</span>
+            <span className="sr-only">Sort pieces</span>
             <select
               value={sort}
               onChange={(e) => setSort(e.target.value as Sort)}
@@ -149,7 +149,7 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
         </div>
 
         {papers.length > 0 && (
-          <div className="mt-4 flex flex-wrap gap-2" aria-label="Quick area filter">
+          <div className="mt-4 flex flex-wrap gap-2" aria-label="Quick topic filter">
             {(["all", ...RESEARCH_AREAS.map((a) => a.id)] as const).map((id) => (
               <button
                 key={id}
@@ -164,7 +164,7 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
                     : "text-foreground-muted hover:text-foreground",
                 )}
               >
-                {id === "all" ? "All Fields" : areaLabel(id)}
+                {id === "all" ? "All topics" : areaLabel(id)}
               </button>
             ))}
           </div>
@@ -172,15 +172,15 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
 
         {papers.length === 0 ? (
           <div className="mt-4 rounded-[10px] border rule bg-surface p-8 text-center">
-            <p className="text-[15px] font-medium">No papers published yet</p>
+            <p className="text-[15px] font-medium">Nothing here yet</p>
             <p className="mx-auto mt-1 max-w-[440px] text-[13.5px] text-foreground-muted">
-              The first paper is on its way. Once published, it will appear
+              The first piece is on its way. Once published, it will appear
               here for reading and download.
             </p>
           </div>
         ) : results.length === 0 ? (
           <div className="mt-4 rounded-[10px] border rule bg-surface p-8 text-center">
-            <p className="text-[15px] font-medium">No papers found.</p>
+            <p className="text-[15px] font-medium">Nothing found.</p>
             <p className="mx-auto mt-1 max-w-[440px] text-[13.5px] text-foreground-muted">
               Try changing your search or filters.
             </p>
@@ -197,7 +197,7 @@ export function ResearchExplorer({ papers }: { papers: Paper[] }) {
         ) : (
           <>
             <p className="mt-4 text-[12.5px] text-foreground-muted" role="status">
-              {results.length} {results.length === 1 ? "paper" : "papers"}
+              {results.length} {results.length === 1 ? "piece" : "pieces"}
             </p>
             <ul className="divide-y divide-[var(--border)]">
               {results.map((p) => (

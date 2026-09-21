@@ -3,7 +3,7 @@ import { activeSocials } from "@/lib/site";
 
 export const metadata = {
   title: "About",
-  description: "A little about Aashirwad Sharma, research interests and GEEK.",
+  description: "A little about Aashirwad Sharma — what I tinker with and why I write.",
 };
 
 export default function AboutPage() {
@@ -12,25 +12,26 @@ export default function AboutPage() {
     <div className="mx-auto w-full max-w-[1080px] px-4 py-12 sm:px-6">
       <p className="meta-label">About</p>
       <h1 className="font-display mt-2 max-w-[640px] text-[clamp(2rem,4vw,3.2rem)] leading-[1.05] tracking-tight">
-        A little about me, my research and what drives this platform.
+        A little about me, what I tinker with, and why I write.
       </h1>
 
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-[1fr_320px]">
         <div>
           <p className="text-[15px] font-semibold">Aashirwad Sharma</p>
-          <p className="text-[13.5px] text-foreground-muted">Independent Researcher</p>
+          <p className="text-[13.5px] text-foreground-muted">Tinkerer & Writer</p>
           <div className="mt-5 space-y-4 text-[15px] leading-relaxed text-foreground/90">
             <p>
-              I&apos;m a researcher and builder with a deep interest in Artificial
-              Intelligence, Computer Science, Finance and Quantitative Research.
+              I&apos;m just a kid at heart who likes to tinker and build —
+              mostly around Artificial Intelligence, Computer Science, Finance
+              and numbers.
             </p>
             <p>
-              This platform is where I publish my work, ideas and findings for
-              anyone who is curious to learn and explore.
+              This is my notebook on the internet. I write down what I learn
+              here, simply, for anyone curious to read.
             </p>
           </div>
 
-          <h2 className="mt-10 text-[15px] font-semibold">My Research Interests</h2>
+          <h2 className="mt-10 text-[15px] font-semibold">Things I tinker with</h2>
           <ul className="mt-3 list-disc space-y-1.5 pl-5 text-[14px] text-foreground-muted">
             <li>Artificial Intelligence &amp; Machine Learning</li>
             <li>Computer Science &amp; Systems</li>
@@ -69,7 +70,7 @@ export default function AboutPage() {
           </p>
           <p className="meta-label mt-5">Aashirwad Sharma</p>
           <p className="mt-2 text-[12.5px] text-foreground-muted">
-            Independent Researcher — portrait coming soon
+            Tinkerer & writer — photo coming soon
           </p>
         </div>
       </div>

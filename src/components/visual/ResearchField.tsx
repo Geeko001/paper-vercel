@@ -33,7 +33,7 @@ export function ResearchField({ className = "" }: { className?: string }) {
     <svg
       viewBox="0 0 800 360"
       role="img"
-      aria-label="Abstract topographic research visualization"
+      aria-label="Abstract wavy lines decoration"
       className={`research-field h-full w-full ${className}`}
       preserveAspectRatio="xMidYMid slice"
     >
