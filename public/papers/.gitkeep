@@ -1,0 +1,4 @@
+Place your first paper's PDF here as `<slug>.pdf`
+(e.g. `my-first-paper.pdf`), then add its entry in
+`src/lib/data/papers.ts` with `pdfPath: "/papers/<slug>.pdf"`.
+Files in this folder are served publicly and downloadable.
