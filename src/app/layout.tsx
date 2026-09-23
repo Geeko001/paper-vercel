@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { getSessionUser } from "@/lib/supabase/server";
 import { SITE_URL } from "@/lib/site";
 import { GuestProvider } from "@/components/account/GuestProvider";
+import { Analytics } from "@vercel/analytics/next";
 
 const instrumentSerif = Instrument_Serif({
   variable: "--font-instrument-serif",
@@ -79,6 +80,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           </main>
         </GuestProvider>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
