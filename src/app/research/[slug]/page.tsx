@@ -49,7 +49,9 @@ export default async function PaperPage({
   const related = getRelatedPapers(paper);
   const pdfAvailable = hasPdf(paper);
   const fileName = pdfAvailable
-    ? paper.pdfPath.split("/").pop() ?? `${paper.slug}.pdf`
+    ? decodeURIComponent(
+        paper.pdfPath.split("/").pop()?.split(/[?#]/)[0] ?? "",
+      ) || `${paper.slug}.pdf`
     : null;
 
   return (
@@ -77,9 +79,7 @@ export default async function PaperPage({
           {pdfAvailable ? (
             <>
               <a
-                href={paper.pdfPath}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#read"
                 className="inline-flex items-center gap-1.5 rounded-[7px] bg-inverse px-3.5 py-2 text-[13px] font-medium text-inverse-foreground transition-opacity hover:opacity-90"
               >
                 <BookOpen size={14} aria-hidden="true" /> Read
@@ -199,15 +199,13 @@ export default async function PaperPage({
                   </p>
                   <p className="mt-0.5 text-[12px] text-foreground-muted">
                     PDF{paper.pdfSizeLabel ? ` · ${paper.pdfSizeLabel}` : ""} ·
-                    Hosted on GitHub · Public
+                    Public
                   </p>
                 </div>
               </div>
               <div className="space-y-2 p-4">
                 <a
-                  href={paper.pdfPath}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#read"
                   className="inline-flex w-full items-center justify-center gap-1.5 rounded-[7px] bg-inverse px-3.5 py-2.5 text-[13.5px] font-medium text-inverse-foreground transition-opacity hover:opacity-90"
                 >
                 <BookOpen size={14} aria-hidden="true" /> Read
@@ -248,15 +246,15 @@ export default async function PaperPage({
             </div>
           )}
           <p className="mt-3 text-[12px] leading-relaxed text-foreground-muted">
-            Read opens the PDF in your browser&apos;s viewer
-            (page navigation, zoom, find-in-page included). The original file
-            on GitHub is the main copy.
+            Read jumps to the reader below — page navigation, zoom,
+            find-in-page and fullscreen included. Download saves the original
+            file.
           </p>
         </div>
       </div>
 
       {pdfAvailable && (
-        <section aria-label="In-page reader" className="mt-12">
+        <section aria-label="In-page reader" id="read" className="mt-12 scroll-mt-20">
           <div className="flex flex-wrap items-end justify-between gap-3">
             <h2 className="font-display text-[24px] tracking-tight">
               Read on this page

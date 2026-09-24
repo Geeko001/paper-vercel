@@ -49,8 +49,7 @@ export default async function AccountPage() {
         )}
       </div>
       <p className="mt-6 text-[13px] text-foreground-muted">
-        Signed in with Supabase Auth. Saved pieces and reading history land
-        here once the database migration is run.
+        Your saved pieces and reading history will appear here.
       </p>
     </div>
   );

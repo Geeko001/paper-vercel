@@ -110,9 +110,7 @@ export function ProfileForm({ userId }: { userId: string }) {
   if (unavailable) {
     return (
       <p className="rounded-[8px] border rule bg-surface px-4 py-3 text-[13.5px] text-foreground-muted">
-        Profiles aren&apos;t available yet — run{" "}
-        <code className="font-mono text-[12.5px]">supabase/migrations/0001_schema.sql</code>{" "}
-        in the Supabase SQL Editor first.
+        Profiles aren&apos;t available yet — try again later.
       </p>
     );
   }

@@ -428,7 +428,7 @@ export function PdfReader({
         className="flex-1 space-y-6 overflow-y-auto px-3 py-6 sm:px-6"
       >
         {status === "loading" && (
-          <div aria-label="Loading paper" className="mx-auto max-w-[720px] space-y-6">
+          <div aria-label="Loading piece" className="mx-auto max-w-[720px] space-y-6">
             {[0, 1].map((i) => (
               <div
                 key={i}
@@ -439,7 +439,7 @@ export function PdfReader({
               </div>
             ))}
             <p className="flex items-center justify-center gap-2 text-[13px] text-foreground-muted">
-              <Loader2 size={14} className="animate-spin" /> Opening paper…
+              <Loader2 size={14} className="animate-spin" /> Opening piece…
             </p>
           </div>
         )}
@@ -448,18 +448,10 @@ export function PdfReader({
           <div className="anim-fade mx-auto max-w-[480px] rounded-[10px] border rule bg-surface p-8 text-center">
             <p className="text-[15px] font-medium">Couldn&apos;t load the reader</p>
             <p className="mx-auto mt-1 max-w-[360px] text-[13px] text-foreground-muted">
-              The PDF didn&apos;t open here. You can still read it in your
-              browser or download it directly.
+              The reader didn&apos;t open here. You can still download the
+              file directly.
             </p>
             <div className="mt-5 flex flex-col justify-center gap-2 sm:flex-row">
-              <a
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-[7px] bg-inverse px-4 py-2 text-[13.5px] font-medium text-inverse-foreground"
-              >
-                Read
-              </a>
               <DownloadButton url={url} filename={fileName} variant="secondary" />
               <button
                 type="button"
